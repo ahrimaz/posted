@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main>
       <AddPost />
-      {data?.map((post) => (
+      {data?.map((post?) => (
         <Post
           comments={post.Comment}
           key={post.id}
