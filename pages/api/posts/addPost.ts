@@ -14,7 +14,6 @@ export default async function handler(
       return res.status(401).json({ messsage: "please sign in to post" });
 
     const title: string = req.body.title;
-    console.log(typeof title);
 
     //get user
     const prismaUser = await prisma.user.findUnique({
