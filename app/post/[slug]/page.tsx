@@ -11,6 +11,7 @@ type URL = {
   params: {
     slug: string;
   };
+  searchParams: string;
 };
 
 const fetchDetails = async (slug: string) => {
@@ -28,11 +29,11 @@ export default function PostDetail(url: URL) {
   return (
     <div>
       <Post
-        id={data.id}
-        name={data.user.name}
-        avatar={data.user.image}
-        postTitle={data.title}
-        comments={data.comments}
+        id={data?.id}
+        name={data?.user.name}
+        avatar={data?.user.image}
+        postTitle={data?.title}
+        comments={data?.comments}
       />
       <AddComment id={data?.id} />
       {data?.Comment?.map((comment) => (
