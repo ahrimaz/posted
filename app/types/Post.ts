@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type PostType = {
   id: string;
   title: string;
@@ -7,8 +9,9 @@ export type PostType = {
     id: string;
     image: string;
     name: string;
-  }[];
+  };
   comments: {
+    message: ReactNode;
     createdAt?: string;
     id: string;
     postId: string;

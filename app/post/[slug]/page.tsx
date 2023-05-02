@@ -20,7 +20,7 @@ const fetchDetails = async (slug: string) => {
 };
 
 export default function PostDetail(url: URL) {
-  const { data, isLoading } = useQuery<PostType[]>({
+  const { data, isLoading } = useQuery<PostType>({
     queryKey: ["detail-post"],
     queryFn: () => fetchDetails(url.params.slug),
   });
@@ -36,7 +36,7 @@ export default function PostDetail(url: URL) {
         comments={data?.comments}
       />
       <AddComment id={data?.id} />
-      {data?.Comment?.map((comment) => (
+      {data?.comments?.map((comment) => (
         <div key={comment.id} className="my-6 bg-white p-8 rounded-md">
           <div className="flex items-center gap-2">
             <Image
