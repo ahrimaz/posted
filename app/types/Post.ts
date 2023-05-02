@@ -7,7 +7,7 @@ export type PostType = {
     id: string;
     image: string;
     name: string;
-  };
+  }[];
   comments: {
     createdAt?: string;
     id: string;
