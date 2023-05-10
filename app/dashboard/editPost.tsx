@@ -59,7 +59,7 @@ export default function EditPost({
         </div>
         <div className="flex items-center gap-4">
           <p className="text-sm font-bold text-gray-700">
-            {comments?.length} Comments
+            {Comment?.length} Comments
           </p>
         </div>
         <button
