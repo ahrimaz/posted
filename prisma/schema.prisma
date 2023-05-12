@@ -35,7 +35,7 @@ model Post {
 
 model Comment {
   id  String  @id @default(cuid())
-  message   String
+  Comment   String
   postId    String
   userId    String
   createdAt DateTime @default(now())

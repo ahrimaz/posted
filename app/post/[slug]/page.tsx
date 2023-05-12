@@ -20,7 +20,7 @@ const fetchDetails = async (slug: string) => {
 };
 
 export default function PostDetail(url: URL) {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading } = useQuery<PostType>({
     queryKey: ["detail-post"],
     queryFn: () => fetchDetails(url.params.slug),
   });
@@ -32,7 +32,7 @@ export default function PostDetail(url: URL) {
         name={data?.user.name}
         avatar={data?.user.image}
         postTitle={data?.title}
-        comments={data?.Comment}
+        comments={data?.comments}
       />
       <AddComment id={data?.id} />
       {data?.comments?.map((comment) => (
